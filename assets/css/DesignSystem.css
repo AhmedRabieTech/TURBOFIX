@@ -1,0 +1,145 @@
+/* =======================================
+   CAR MAINTENANCE ELITE DESIGN SYSTEM 
+   Modern Orange & Dark Mode Tokens
+   ======================================= */
+
+/* Color Definitions */
+.text-orange-brand, .text-brand { color: #ff6b1a !important; }
+.bg-orange-brand { background-color: #ff6b1a !important; }
+.text-gradient-orange {
+    background: linear-gradient(135deg, #ff6b1a 0%, #ffc042 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Badges */
+.badge-brand { 
+    color: #ff6b1a; 
+    border: 1px solid rgba(255, 107, 26, 0.3) !important; 
+    background-color: rgba(255, 107, 26, 0.1) !important; 
+}
+.shadow-orange { box-shadow: 0 4px 15px rgba(255, 107, 26, 0.4); }
+
+/* Typography Utilities */
+.tracking-wider { letter-spacing: 0.05em; font-size: 0.75rem; text-transform: uppercase; }
+.tracking-widest { letter-spacing: 0.15em; font-size: 0.75rem; text-transform: uppercase; }
+.tracking-tighter { letter-spacing: -0.05em; }
+
+/* Glows & Lighting */
+.title-glow { text-shadow: 0 0 40px rgba(255, 107, 26, 0.2); }
+.ambient-glow {
+    width: 600px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(255, 107, 26, 0.08) 0%, rgba(26,29,31,0) 70%);
+    filter: blur(60px);
+    pointer-events: none;
+    z-index: 0;
+    position: absolute;
+    top: -100px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* Animations */
+.fade-in-up { animation: fadeInUp 0.8s cubic-bezier(0.165, 0.84, 0.44, 1) both; }
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Luxurious Action Buttons (Slider + UI) */
+.btn-luxury {
+    background: linear-gradient(135deg, #1d2124 0%, #15181a 100%) !important;
+    border: 1px solid rgba(255, 107, 26, 0.4) !important;
+    color: #ff6b1a !important;
+    z-index: 1;
+    font-size: clamp(0.75rem, 2vw, 1rem); /* Proportional font size */
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1) !important;
+}
+
+@media (max-width: 576px) {
+    .btn-luxury {
+        padding: 0.6rem 1.25rem !important;
+        font-size: 0.8rem !important;
+    }
+}
+.btn-luxury:hover {
+    color: #fff !important;
+    background: linear-gradient(135deg, #ff6b1a 0%, #e04f0d 100%) !important;
+    border-color: #ff6b1a !important;
+    box-shadow: 0 10px 25px rgba(255, 107, 26, 0.35) !important;
+    transform: translateY(-2px) !important;
+}
+
+/* Button Interior Behaviors */
+.btn-icon { transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1); }
+.btn-luxury:hover .btn-icon { transform: translateX(5px); }
+
+/* Button Shimmer Sweep Effect */
+.btn-shimmer {
+    position: absolute; top: 0; left: -100%; width: 50%; height: 100%;
+    background: linear-gradient(to right, transparent, rgba(255,255,255,0.2), transparent);
+    transform: skewX(-20deg);
+    z-index: 1;
+}
+.btn-luxury:hover .btn-shimmer {
+    animation: btnSweep 0.8s ease-in-out;
+}
+@keyframes btnSweep {
+    0% { left: -100%; }
+    100% { left: 200%; }
+}
+
+/* Custom Form Inputs */
+.premium-input {
+    background: #0f1112 !important; /* solid deep dark background */
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    color: #ffffff !important;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.premium-input:focus {
+    border-color: #ff6b1a !important;
+    box-shadow: 0 0 15px rgba(255, 107, 26, 0.2) !important;
+    background: #141718 !important; /* slight lift on focus */
+}
+.premium-input::placeholder {
+    color: rgba(255, 255, 255, 0.45) !important;
+    font-size: 0.9rem;
+}
+
+/* Fix for Chrome's yellow autofill background */
+.premium-input:-webkit-autofill,
+.premium-input:-webkit-autofill:hover, 
+.premium-input:-webkit-autofill:focus {
+    -webkit-text-fill-color: #ffffff !important;
+    -webkit-box-shadow: 0 0 0px 1000px #0f1112 inset !important;
+    transition: background-color 5000s ease-in-out 0s;
+}
+
+/* Date/Time Native Icon Adjustments for Dark Mode */
+.premium-input::-webkit-calendar-picker-indicator {
+    filter: invert(1);
+    opacity: 0.7;
+    cursor: pointer;
+    transition: opacity 0.3s;
+}
+.premium-input::-webkit-calendar-picker-indicator:hover {
+    opacity: 1;
+}
+
+/* Component Overrides & RTL */
+html[dir="rtl"] .ms-1 { margin-right: 0.25rem !important; margin-left: 0 !important; }
+html[dir="rtl"] .ps-4 { padding-right: 1.5rem !important; padding-left: 0 !important; }
+html[dir="rtl"] .btn-luxury:hover .btn-icon { transform: translateX(-5px); }
+
+/* Responsive Utility Overrides */
+@media (max-width: 768px) {
+    .display-4 { font-size: calc(1.5rem + 2vw) !important; }
+    .lead { font-size: 1rem !important; }
+}
+
+@media (max-width: 576px) {
+    .display-4 { font-size: 1.8rem !important; }
+    .section-title-container { margin-bottom: 2rem !important; }
+}
