@@ -1,13 +1,10 @@
 {
   "files": {
-    "main.css": "/TURBOFIX/static/css/main.76da3018.css",
-    "main.js": "/TURBOFIX/static/js/main.f5585a2d.js",
+    "main.js": "/TURBOFIX/static/js/main.f0de90a7.js",
     "index.html": "/TURBOFIX/index.html",
-    "main.76da3018.css.map": "/TURBOFIX/static/css/main.76da3018.css.map",
-    "main.f5585a2d.js.map": "/TURBOFIX/static/js/main.f5585a2d.js.map"
+    "main.f0de90a7.js.map": "/TURBOFIX/static/js/main.f0de90a7.js.map"
   },
   "entrypoints": [
-    "static/css/main.76da3018.css",
-    "static/js/main.f5585a2d.js"
+    "static/js/main.f0de90a7.js"
   ]
 }
