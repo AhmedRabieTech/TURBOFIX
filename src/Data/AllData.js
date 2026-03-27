@@ -19,7 +19,7 @@ const services = [
     price: 150,
     category: "Diagnostic",
     categoryAr: "تشخيص",
-    image: "/assets/images/inspection.png"
+    image: process.env.PUBLIC_URL + "/assets/images/inspection.png"
   },
   {
     id: 3,
@@ -30,7 +30,7 @@ const services = [
     price: 250,
     category: "General",
     categoryAr: "عام",
-    image: "/assets/images/maintenance.png"
+    image: process.env.PUBLIC_URL + "/assets/images/maintenance.png"
   },
   {
     id: 4,
@@ -74,7 +74,7 @@ const services = [
     price: 350,
     category: "Maintenance",
     categoryAr: "صيانة",
-    image: "/assets/images/glass-replacement.jpg"
+    image: process.env.PUBLIC_URL + "/assets/images/glass-replacement.jpg"
   },
   {
     id: 8,
@@ -85,7 +85,7 @@ const services = [
     price: 180,
     category: "Specialized",
     categoryAr: "متخصص",
-    image: "/assets/images/services/ac-service.jpg"
+    image: process.env.PUBLIC_URL + "/assets/images/services/ac-service.jpg"
   },
   {
     id: 9,
@@ -96,7 +96,7 @@ const services = [
     price: 120,
     category: "Diagnostic",
     categoryAr: "تشخيص",
-    image: "/assets/images/services/car-diagnostics.jpg"
+    image: process.env.PUBLIC_URL + "/assets/images/services/car-diagnostics.jpg"
   }
 ];
 

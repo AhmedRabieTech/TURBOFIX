@@ -78,7 +78,7 @@ const Home = () => {
                     </div>
                   </div>
                   <div className="card-body p-4">
-                    <h5 className="card-title fw-bold mb-3">{lang === 'EN' ? service.name : service.nameAr}</h5>
+                    <h5 className="card-title fw-bold mb-3 service-name-hover transition-all">{lang === 'EN' ? service.name : service.nameAr}</h5>
                     <p className="card-text text-muted small mb-4">
                         {(lang === 'EN' ? service.description : service.descriptionAr).substring(0, 90)}...
                     </p>
@@ -142,7 +142,19 @@ const Home = () => {
         .text-brand { color: #ff6b1a !important; }
         .bg-brand { background-color: #ff6b1a !important; }
         .dir-rtl { direction: rtl; text-align: right; }
-        .scale-hover:hover { transform: translateY(-8px); border-color: rgba(255,107,26,0.3) !important; }
+        .scale-hover:hover { transform: translateY(-10px); border-color: #ff6b1a !important; box-shadow: 0 10px 30px rgba(255, 107, 26, 0.2) !important; }
+        .scale-hover:hover .service-name-hover {
+          color: #ff6b1a !important;
+          text-shadow: 0 0 10px #ff6b1a, 0 0 20px #ff6b1a, 0 0 30px #ff6b1a;
+        }
+        .service-name-hover {
+          transition: all 0.3s ease-in-out;
+        }
+        .service-name-hover:hover { 
+          color: #ff6b1a !important; 
+          text-shadow: 0 0 15px #ff6b1a, 0 0 25px #ff6b1a;
+          cursor: pointer;
+        }
         .smallest { font-size: 0.75rem; }
       `}</style>
     </div>

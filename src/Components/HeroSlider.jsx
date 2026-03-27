@@ -11,7 +11,7 @@ const HeroSlider = () => {
     EN: [
       {
         id: 1,
-        image: '/assets/images/slide1.png',
+        image: process.env.PUBLIC_URL + '/assets/images/slide1.png',
         headline: 'Elite Performance Expert Care',
         description: 'Precision maintenance and high-end automotive solutions for those who demand excellence from their vehicles.',
         cta: 'Book Appointment',
@@ -19,7 +19,7 @@ const HeroSlider = () => {
       },
       {
         id: 2,
-        image: '/assets/images/slide2.png',
+        image: process.env.PUBLIC_URL + '/assets/images/slide2.png',
         headline: 'Premium Car Maintenance',
         description: 'Comprehensive routine checks and luxury care services tailored to your vehicle.',
         cta: 'View Menu',
@@ -27,7 +27,7 @@ const HeroSlider = () => {
       },
       {
         id: 3,
-        image: '/assets/images/slide3.jpg',
+        image: process.env.PUBLIC_URL + '/assets/images/slide3.jpg',
         headline: 'Advanced Diagnostics',
         description: 'State-of-the-art diagnostic technology for pinpoint accuracy and swift repairs.',
         cta: 'Get Diagnosed',
@@ -37,7 +37,7 @@ const HeroSlider = () => {
     AR: [
       {
         id: 1,
-        image: '/assets/images/slide1.png',
+        image: process.env.PUBLIC_URL + '/assets/images/slide1.png',
         headline: 'أداء متميز وعناية فائقة',
         description: 'صيانة دقيقة وحلول سيارات متطورة لمن يطلبون التميز في كل تفاصيل قيادتهم.',
         cta: 'احجز موعداً',
@@ -45,7 +45,7 @@ const HeroSlider = () => {
       },
       {
         id: 2,
-        image: '/assets/images/slide2.png',
+        image: process.env.PUBLIC_URL + '/assets/images/slide2.png',
         headline: 'صيانة سيارات فاخرة',
         description: 'فحوصات دورية شاملة وخدمات عناية متميزة مصممة خصيصاً لسيارتك بكل تفاصيلها.',
         cta: 'عرض القائمة',
@@ -53,7 +53,7 @@ const HeroSlider = () => {
       },
       {
         id: 3,
-        image: '/assets/images/slide3.jpg',
+        image: process.env.PUBLIC_URL + '/assets/images/slide3.jpg',
         headline: 'تشخيص أعطال متقدم',
         description: 'استخدام أحدث تقنيات التشخيص لضمان الدقة المطلقة وسرعة الإصلاح والكفاءة.',
         cta: 'ابدأ الفحص',

@@ -125,7 +125,7 @@ const Services = () => {
                 </div>
 
                 <div className="card-body p-4 pt-0 z-3 d-flex flex-column flex-grow-1 card-inner-bg">
-                  <h4 className="card-title fw-bold text-white mb-3 transform-title">
+                  <h4 className="card-title fw-bold text-white mb-3 transform-title service-name-glow">
                     {lang === 'EN' ? service.name : service.nameAr}
                   </h4>
                   <p className="card-text text-white-50 fs-6 lh-base mb-4 flex-grow-1">
@@ -159,7 +159,19 @@ const Services = () => {
         .ambient-glow { width: 600px; height: 400px; background: radial-gradient(circle, rgba(255, 107, 26, 0.08) 0%, transparent 70%); filter: blur(60px); position: absolute; top: -100px; left: 50%; transform: translateX(-50%); }
         .premium-input-wrapper { background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255, 255, 255, 0.05); backdrop-filter: blur(10px); }
         .premium-card { background: #111315; border: 1px solid rgba(255, 255, 255, 0.03) !important; transition: all 0.5s ease; }
-        .premium-card:hover { transform: translateY(-8px) scale(1.02); border-color: rgba(255,107,26,0.3) !important; }
+        .premium-card:hover { transform: translateY(-10px) scale(1.02); border-color: #ff6b1a !important; box-shadow: 0 15px 40px rgba(255, 107, 26, 0.3) !important; }
+        .premium-card:hover .service-name-glow {
+          color: #ff6b1a !important;
+          text-shadow: 0 0 10px #ff6b1a, 0 0 20px #ff6b1a, 0 0 30px #ff6b1a;
+        }
+        .service-name-glow {
+          transition: all 0.3s ease-in-out;
+        }
+        .service-name-glow:hover {
+          color: #ff6b1a !important;
+          text-shadow: 0 0 15px #ff6b1a, 0 0 25px #ff6b1a;
+          cursor: pointer;
+        }
         .card-inner-bg { background: linear-gradient(to bottom, transparent 0%, #111315 20%); }
         .premium-img { transition: transform 0.8s ease; filter: brightness(0.85); }
         .premium-card:hover .premium-img { transform: scale(1.1); filter: brightness(1); }

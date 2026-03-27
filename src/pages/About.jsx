@@ -2,8 +2,6 @@ import React from 'react';
 import PremiumButton from '../Components/PremiumButton';
 import { motion } from 'framer-motion';
 import { useLanguage } from '../LanguageContext';
-// Removed DesignSystem.css import - now linked in index.html
-
 const About = () => {
   const { lang } = useLanguage();
 
@@ -49,14 +47,16 @@ const About = () => {
       {/* Hero Section */}
       <section className="about-hero-clean position-relative vh-100 d-flex align-items-center justify-content-center">
         <div className="hero-vignette-bottom"></div>
-        <img src="/assets/images/about-hero.jpg" alt="Hero" className="position-absolute w-100 h-100 object-fit-cover opacity-50"/>
+        <img src={process.env.PUBLIC_URL + "/assets/images/about-hero.jpg"} alt="Hero" className="position-absolute w-100 h-100 object-fit-cover opacity-50"/>
         <div className="container position-relative z-3">
           <div className="row justify-content-center">
             <div className="col-lg-10 text-center">
-              <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 1.2 }}>
-                <span className="text-brand fw-bold tracking-widest text-uppercase d-block small mb-3">{t.est}</span>
-                <h1 className="hero-main-title fw-black mb-4">{t.heroTitle}</h1>
-                <p className="hero-subtext text-white-70 max-width-700 mx-auto fs-4 fw-light">{t.heroSub}</p>
+              <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 1.2 }} className="position-relative">
+                <div className="position-relative z-1" style={{ textShadow: '0 10px 30px rgba(0,0,0,0.5)' }}>
+                  <span className="text-brand fw-bold d-block mb-3" style={{ fontSize: 'clamp(1.2rem, 2vw, 1.6rem)' }}>{t.est}</span>
+                  <h1 className="hero-main-title fw-black mb-4 mx-auto" style={{ fontSize: 'clamp(2.5rem, 5vw, 4.5rem)', lineHeight: 1.2, maxWidth: '900px' }}>{t.heroTitle}</h1>
+                  <p className="hero-subtext text-white-70 max-width-700 mx-auto fw-normal" style={{ fontSize: 'clamp(1.1rem, 2vw, 1.4rem)', lineHeight: 1.8 }}>{t.heroSub}</p>
+                </div>
               </motion.div>
             </div>
           </div>
@@ -98,96 +98,25 @@ const About = () => {
             <div className="col-lg-6">
               <div className="brand-partners-grid p-5 rounded-5">
                 <h5 className="text-center text-white-50 mb-5 tracking-widest text-uppercase small">{t.partnerTitle}</h5>
-                <div className="row g-5 align-items-center text-center justify-content-center">
-                   {/* Mercedes-Benz */}
-                   <div className="col-4 col-md-3">
-                     <motion.div 
-                        className="brand-logo-standalone"
-                        initial={{ opacity: 0, y: 20, filter: "blur(8px)" }}
-                        whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-                        viewport={{ once: true }}
-                        animate={{ 
-                          y: [0, -6, 0],
-                          rotateZ: [-1, 1, -1],
-                          scale: [1, 1.02, 1]
-                        }}
-                        transition={{ 
-                          default: { duration: 1.2, delay: 0.1, ease: [0.16, 1, 0.3, 1] },
-                          y: { duration: 5, repeat: Infinity, ease: "easeInOut" },
-                          rotateZ: { duration: 7, repeat: Infinity, ease: "easeInOut" },
-                          scale: { duration: 6, repeat: Infinity, ease: "easeInOut" }
-                        }}
-                        whileHover={{ 
-                          scale: 1.15, 
-                          rotateY: 10,
-                          rotateX: -5,
-                          filter: "drop-shadow(0 0 20px rgba(255,255,255,0.15)) brightness(1.1)",
-                        }}
-                     >
-                       <img src="/assets/images/brands/mercedes.svg" alt="Mercedes-Benz" className="brand-partner-icon-clean img-fluid" />
-                       <div className="small fw-bold opacity-60 mt-3 tracking-widest text-uppercase" style={{ fontSize: '0.65rem' }}>Mercedes-Benz</div>
-                     </motion.div>
-                   </div>
-
-                   {/* BMW */}
-                   <div className="col-4 col-md-3">
-                     <motion.div 
-                        className="brand-logo-standalone"
-                        initial={{ opacity: 0, y: 20, filter: "blur(8px)" }}
-                        whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-                        viewport={{ once: true }}
-                        animate={{ 
-                          y: [0, -6, 0],
-                          rotateZ: [1, -1, 1],
-                          scale: [1, 1.02, 1]
-                        }}
-                        transition={{ 
-                          default: { duration: 1.2, delay: 0.3, ease: [0.16, 1, 0.3, 1] },
-                          y: { duration: 5, repeat: Infinity, ease: "easeInOut", delay: 0.4 },
-                          rotateZ: { duration: 7, repeat: Infinity, ease: "easeInOut", delay: 0.4 },
-                          scale: { duration: 6, repeat: Infinity, ease: "easeInOut", delay: 0.4 }
-                        }}
-                        whileHover={{ 
-                          scale: 1.15, 
-                          rotateY: 10,
-                          rotateX: -5,
-                          filter: "drop-shadow(0 0 20px rgba(255,255,255,0.15)) brightness(1.1)",
-                        }}
-                     >
-                       <img src="/assets/images/brands/bmw.svg" alt="BMW" className="brand-partner-icon-clean img-fluid" />
-                       <div className="small fw-bold opacity-60 mt-3 tracking-widest text-uppercase" style={{ fontSize: '0.65rem' }}>BMW Group</div>
-                     </motion.div>
-                   </div>
-
-                   {/* Audi */}
-                   <div className="col-4 col-md-3">
-                     <motion.div 
-                        className="brand-logo-standalone"
-                        initial={{ opacity: 0, y: 20, filter: "blur(8px)" }}
-                        whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-                        viewport={{ once: true }}
-                        animate={{ 
-                          y: [0, -6, 0],
-                          rotateZ: [-0.8, 0.8, -0.8],
-                          scale: [1, 1.02, 1]
-                        }}
-                        transition={{ 
-                          default: { duration: 1.2, delay: 0.5, ease: [0.16, 1, 0.3, 1] },
-                          y: { duration: 5, repeat: Infinity, ease: "easeInOut", delay: 0.8 },
-                          rotateZ: { duration: 7, repeat: Infinity, ease: "easeInOut", delay: 0.8 },
-                          scale: { duration: 6, repeat: Infinity, ease: "easeInOut", delay: 0.8 }
-                        }}
-                        whileHover={{ 
-                          scale: 1.15, 
-                          rotateY: 10,
-                          rotateX: -5,
-                          filter: "drop-shadow(0 0 20px rgba(255,255,255,0.15)) brightness(1.1)",
-                        }}
-                     >
-                       <img src="/assets/images/brands/audi.svg" alt="Audi" className="brand-partner-icon-clean img-fluid" />
-                       <div className="small fw-bold opacity-60 mt-3 tracking-widest text-uppercase" style={{ fontSize: '0.65rem' }}>Audi Sport</div>
-                     </motion.div>
-                   </div>
+                <div className="brand-marquee-container overflow-hidden position-relative w-100">
+                  <div className="brand-marquee-track d-flex align-items-center">
+                    {[1, 2, 3, 4].map((set) => (
+                      <React.Fragment key={set}>
+                        <div className="brand-logo-standalone mx-4 mx-md-5">
+                          <img src={process.env.PUBLIC_URL + "/assets/images/brands/mercedes.svg"} alt="Mercedes-Benz" className="brand-partner-icon-clean img-fluid" />
+                          <div className="small fw-bold opacity-60 mt-3 tracking-widest text-uppercase text-center" style={{ fontSize: '0.65rem' }}>Mercedes-Benz</div>
+                        </div>
+                        <div className="brand-logo-standalone mx-4 mx-md-5">
+                          <img src={process.env.PUBLIC_URL + "/assets/images/brands/bmw.svg"} alt="BMW" className="brand-partner-icon-clean img-fluid" />
+                          <div className="small fw-bold opacity-60 mt-3 tracking-widest text-uppercase text-center" style={{ fontSize: '0.65rem' }}>BMW Group</div>
+                        </div>
+                        <div className="brand-logo-standalone mx-4 mx-md-5">
+                          <img src={process.env.PUBLIC_URL + "/assets/images/brands/audi.svg"} alt="Audi" className="brand-partner-icon-clean img-fluid" />
+                          <div className="small fw-bold opacity-60 mt-3 tracking-widest text-uppercase text-center" style={{ fontSize: '0.65rem' }}>Audi Sport</div>
+                        </div>
+                      </React.Fragment>
+                    ))}
+                  </div>
                 </div>
               </div>
             </div>
@@ -199,9 +128,9 @@ const About = () => {
       <section className="py-5 bg-card-dark bg-opacity-30 border-top border-white border-opacity-5">
         <div className="container py-lg-5">
           <div className="row g-4">
-            <Pillar icon="fa-crosshairs" title={t.mission.title} desc={t.mission.desc} delay={0.1} />
-            <Pillar icon="fa-award" title={t.message.title} desc={t.message.desc} delay={0.2} highlight />
-            <Pillar icon="fa-gem" title={t.vision.title} desc={t.vision.desc} delay={0.3} />
+            <Pillar icon="fa-rocket" title={t.mission.title} desc={t.mission.desc} delay={0.1} />
+            <Pillar icon="fa-envelope-open-text" title={t.message.title} desc={t.message.desc} delay={0.2} highlight />
+            <Pillar icon="fa-eye" title={t.vision.title} desc={t.vision.desc} delay={0.3} />
           </div>
         </div>
       </section>
@@ -219,9 +148,54 @@ const About = () => {
         .fw-black { font-weight: 900; }
         .accent-line { width: 80px; height: 4px; background: #ff6b1a; border-radius: 2px; }
         .history-content-box { background: rgba(255,255,255,0.01); backdrop-filter: blur(5px); }
-        .pillar-premium { background: #111416; border: 1px solid rgba(255,255,255,0.05); padding: 45px; border-radius: 35px; text-align: center; }
-        .pillar-premium:hover { border-color: #ff6b1a; transform: translateY(-10px); }
-        .pillar-top-icon { font-size: 3rem; margin-bottom: 20px; }
+        .pillar-premium { 
+           background: linear-gradient(145deg, #121417 0%, #0a0c0e 100%); 
+           border: 1px solid rgba(255,255,255,0.03); 
+           padding: 50px 40px; 
+           border-radius: 20px; 
+           text-align: center; 
+           box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+           transition: border-color 0.4s ease, box-shadow 0.4s ease, transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+           position: relative;
+           overflow: hidden;
+           z-index: 1;
+        }
+        .pillar-premium:hover { 
+           border-color: rgba(255,107,26,0.3); 
+           box-shadow: 0 20px 40px rgba(255,107,26,0.15); 
+           transform: translateY(-12px);
+        }
+        .highlighted-pillar {
+           border-color: rgba(255,107,26,0.15);
+           background: linear-gradient(145deg, #181310 0%, #0a0c0e 100%);
+        }
+        .pillar-glow {
+           position: absolute;
+           top: -50px; left: 50%;
+           transform: translateX(-50%);
+           width: 200px; height: 200px;
+           background: radial-gradient(circle, rgba(255,107,26,0.15) 0%, transparent 70%);
+           opacity: 0;
+           transition: opacity 0.6s ease;
+           z-index: -1;
+           pointer-events: none;
+        }
+        .pillar-premium:hover .pillar-glow {
+           opacity: 1;
+        }
+        .pillar-top-icon { 
+           font-size: 3.5rem; 
+           margin-bottom: 25px; 
+           color: #ff6b1a; 
+           background: -webkit-linear-gradient(45deg, #ff6b1a, #ff9b5a);
+           -webkit-background-clip: text;
+           -webkit-text-fill-color: transparent;
+           filter: drop-shadow(0 10px 15px rgba(255,107,26,0.3));
+           transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        .pillar-premium:hover .pillar-top-icon {
+           transform: scale(1.15);
+        }
         .cert-badge { padding: 20px; background: rgba(255,255,255,0.03); border-radius: 20px; min-width: 120px; }
         .brand-logo-standalone { display: flex; flex-direction: column; align-items: center; justify-content: center; isolation: isolate; }
         .brand-partner-icon-clean { height: 85px; width: auto; max-width: 100%; object-fit: contain; filter: drop-shadow(0 8px 20px rgba(0,0,0,0.5)); transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1); }
@@ -239,6 +213,34 @@ const About = () => {
         .dir-rtl { direction: rtl; text-align: right; }
         .pulse-glow { animation: pulse 2s infinite; }
         @keyframes pulse { 0% { box-shadow: 0 0 0 0 rgba(255,107,26,0.4); } 70% { box-shadow: 0 0 0 10px rgba(255,107,26,0); } 100% { box-shadow: 0 0 0 0 rgba(255,107,26,0); } }
+        
+        .brand-marquee-container {
+          mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
+          -webkit-mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
+          padding: 20px 0;
+        }
+        .brand-marquee-track {
+          width: max-content;
+          animation: marqueeScroll 25s linear infinite;
+        }
+        .brand-marquee-track:hover {
+          animation-play-state: paused;
+        }
+        .brand-logo-standalone:hover {
+          transform: scale(1.15);
+          filter: drop-shadow(0 0 20px rgba(255,255,255,0.15)) brightness(1.1);
+        }
+        .dir-rtl .brand-marquee-track {
+          animation: marqueeScrollRTL 25s linear infinite;
+        }
+        @keyframes marqueeScroll {
+          0% { transform: translateX(0); }
+          100% { transform: translateX(-25%); }
+        }
+        @keyframes marqueeScrollRTL {
+          0% { transform: translateX(0); }
+          100% { transform: translateX(25%); }
+        }
       `}</style>
     </div>
   );
@@ -246,10 +248,11 @@ const About = () => {
 
 const Pillar = ({ icon, title, desc, delay, highlight }) => (
   <motion.div className="col-lg-4" initial={{ opacity: 0, y: 50 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay }}>
-    <div className={`pillar-premium h-100 ${highlight ? 'border-brand' : ''}`}>
-      <motion.div whileHover={{ rotateY: 180 }} className="pillar-top-icon text-brand"><i className={`fa-solid ${icon}`}></i></motion.div>
-      <h3 className="fw-bold mb-3">{title}</h3>
-      <p className="text-white-50">{desc}</p>
+    <div className={`pillar-premium h-100 ${highlight ? 'highlighted-pillar' : ''}`}>
+      <div className="pillar-glow"></div>
+      <div className="pillar-top-icon"><i className={`fa-solid ${icon}`}></i></div>
+      <h3 className="fw-black mb-4 text-brand">{title}</h3>
+      <p className="text-white-50 lh-lg">{desc}</p>
     </div>
   </motion.div>
 );
