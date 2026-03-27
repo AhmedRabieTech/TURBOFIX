@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.js": "/TURBOFIX/static/js/main.f0de90a7.js",
+    "main.js": "/TURBOFIX/static/js/main.cc912d52.js",
     "index.html": "/TURBOFIX/index.html",
-    "main.f0de90a7.js.map": "/TURBOFIX/static/js/main.f0de90a7.js.map"
+    "main.cc912d52.js.map": "/TURBOFIX/static/js/main.cc912d52.js.map"
   },
   "entrypoints": [
-    "static/js/main.f0de90a7.js"
+    "static/js/main.cc912d52.js"
   ]
 }
