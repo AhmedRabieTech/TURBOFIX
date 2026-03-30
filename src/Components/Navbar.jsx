@@ -12,11 +12,11 @@ const Navbar = () => {
     <nav className={`navbar navbar-expand-lg navbar-dark bg-dark sticky-top shadow-lg py-2 px-md-5 border-bottom border-secondary border-opacity-10 ${lang === 'AR' ? 'dir-rtl' : ''}`}>
       <div className="container-fluid px-lg-4">
         {/* Brand Logo - TurboFix with Wrench Icon */}
-        <Link className="navbar-brand fw-bold fs-3 text-uppercase d-flex align-items-center gap-3" to="/">
+        <Link className="navbar-brand fw-bold fs-3 text-uppercase d-flex align-items-center gap-2" to="/">
           <div className="bg-primary-gradient p-2 rounded-3 d-flex align-items-center justify-content-center shadow-sm brand-icon-box flex-shrink-0">
              <i className="fa-solid fa-screwdriver-wrench text-white fs-4"></i>
           </div>
-          <span className="text-white tracking-tighter d-none d-sm-inline site-brand-name">Turbo<span className="text-primary-orange">Fix</span></span>
+          <span className="text-white tracking-tighter site-brand-name">Turbo<span className="text-primary-orange">Fix</span></span>
         </Link>
 
         {/* Toggler for Mobile */}
@@ -111,6 +111,20 @@ const Navbar = () => {
         @media (max-width: 991px) {
             .nav-links-center { padding: 20px 0; border-top: 1px solid rgba(255,255,255,0.05); }
             .navbar-actions { justify-content: center; padding-bottom: 20px; }
+        }
+
+        @media (max-width: 576px) {
+            .site-brand-name { 
+              font-size: 1.35rem !important; 
+              display: inline-block !important; 
+              visibility: visible !important;
+              opacity: 1 !important;
+              white-space: nowrap !important;
+              font-weight: 800 !important;
+            }
+            .brand-icon-box { width: 32px; height: 32px; }
+            .brand-icon-box i { font-size: 1rem !important; }
+            .navbar-brand { gap: 8px !important; margin-right: 0 !important; margin-left: 0 !important; }
         }
       `}</style>
     </nav>
